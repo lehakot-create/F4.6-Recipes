@@ -1,13 +1,14 @@
 import axios from 'axios';
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [category, SetCategory] = useState({});
+  const [category, setCategory] = useState([]);
 
   async function getCategory() {
     try {
       const response = await axios.get('http://127.0.0.1:8000/api/v1/category/')
       console.log(response)
+      setCategory(response.data)
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +21,8 @@ function App() {
 
   return (
     <div>
-      Hello from frontend!
+      Категории
+      {category && category.map((item, index) => <button key={index}>{item.name}</button>)}
     </div>
   );
 }
