@@ -1,0 +1,22 @@
+.nav{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(56, 53, 53);
+  height:  40px;
+  padding: 10px;
+}
+a{
+  color: white;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+}
+.btn-category{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
